@@ -19,7 +19,6 @@ public class Solution22 {
         }
         public TreeNode() {
         }
-
     }
 
     public static void main(String[] args) {
