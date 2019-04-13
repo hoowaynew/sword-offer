@@ -32,16 +32,37 @@ public class Solution18 {
 
     }
 
-    public void Mirror(TreeNode root) {
-        if (root == null || (root.left == null && root.right == null)){
-            return ;
-        }
-        if (root.left != null){
-            TreeNode node = root;
-        }
-        if (root.right != null){
+    /**
+     *
+     * 用例:
+         {8,6,10,5,7,9,11}
 
+         对应输出应该为:
+
+         {8,10,6,11,9,7,5}
+
+         你的输出为:
+
+        {8,10,10,11,11,11,11}
+     * @param root
+     */
+    public void Mirror(TreeNode root) {
+        root = reverseNode(root);
+    }
+
+    private TreeNode reverseNode(TreeNode root) {
+        if (root == null){
+            return null;
         }
+        TreeNode left = root.left;
+        TreeNode right = root.right;
+        root.left = right;
+        root.right = left;
+
+        reverseNode(root.left);
+        reverseNode(root.right);
+
+        return root;
     }
 
 
