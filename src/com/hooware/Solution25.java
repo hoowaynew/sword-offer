@@ -102,6 +102,10 @@ public class Solution25 {
      *3、拆分链表，将链表拆分为原链表和复制后的链表
      */
     public RandomListNode Clone2(RandomListNode pHead) {
+        if (pHead == null){
+            return null;
+        }
+
 
         return null;
     }
